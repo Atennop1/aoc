@@ -15,11 +15,7 @@ func main() {
 
 	answer := 0
 	current := 50
-	for i := range strings.SplitSeq(string(f), "\n") {
-		if len(i) == 0 {
-			break
-		}
-
+	for i := range strings.SplitSeq(string(f[:len(f)-1]), "\n") {
 		direction := 1
 		if i[0] == 'L' {
 			direction = -1
