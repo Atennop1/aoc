@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	f, err := os.OpenFile("3.txt", os.O_RDONLY, 644)
+	f, err := os.OpenFile("input.txt", os.O_RDONLY, 644)
 	if err != nil {
 		os.Exit(1)
 	}
@@ -32,4 +32,3 @@ func main() {
 
 	fmt.Println(total)
 }
-

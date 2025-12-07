@@ -21,7 +21,7 @@ func addOrSumIfExists(beams map[cell]int, cell cell, value int) {
 }
 
 func main() {
-	f, err := os.ReadFile("7.txt")
+	f, err := os.ReadFile("input.txt")
 	if err != nil {
 		os.Exit(-1)
 	}
@@ -62,4 +62,3 @@ func main() {
 
 	fmt.Println(result)
 }
-

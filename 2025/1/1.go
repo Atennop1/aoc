@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	f, err := os.ReadFile("1.txt")
+	f, err := os.ReadFile("input.txt")
 	if err != nil {
 		os.Exit(-1)
 	}
@@ -26,16 +26,12 @@ func main() {
 
 		switch {
 		case current < 0:
-			if current-direction*amount != 0 {
-				answer++
-			}
-
-			answer += (-current) / 100
 			current = (100 - (-current)%100) % 100
 		case current > 99:
-			answer += current / 100
 			current %= 100
-		case current == 0:
+		}
+
+		if current == 0 {
 			answer++
 		}
 	}

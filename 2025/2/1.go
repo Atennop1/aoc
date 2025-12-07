@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	f, err := os.ReadFile("2.txt")
+	f, err := os.ReadFile("input.txt")
 	if err != nil {
 		os.Exit(1)
 	}
@@ -26,15 +26,8 @@ func main() {
 	for _, diapasone := range diapasones {
 		for i := diapasone[0]; i <= diapasone[1]; i++ {
 			iString := strconv.Itoa(i)
-			for possibleChunk := 1; possibleChunk <= len(iString)/2; possibleChunk++ {
-				if len(iString)%possibleChunk != 0 {
-					continue
-				}
-
-				if strings.Repeat(iString[:possibleChunk], len(iString)/possibleChunk) == iString {
-					result += i
-					break
-				}
+			if len(iString)%2 == 0 && iString[:len(iString)/2] == iString[len(iString)/2:] {
+				result += i
 			}
 		}
 	}

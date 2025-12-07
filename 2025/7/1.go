@@ -12,7 +12,7 @@ type cell struct {
 }
 
 func main() {
-	f, err := os.ReadFile("7.txt")
+	f, err := os.ReadFile("input.txt")
 	if err != nil {
 		os.Exit(-1)
 	}
